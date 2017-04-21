@@ -13,7 +13,7 @@ import * as firebase from 'firebase';
 @Injectable()
 export class FirebaseService {
 
-  //program: FirebaseListObservable<any[]>;
+  courses: FirebaseListObservable<any[]>;
   program: FirebaseObjectObservable<any>;
   folder: any;
 
@@ -23,11 +23,19 @@ export class FirebaseService {
   }
 
   getDescription(){
-    return this.program = this.af.database.object('program') as FirebaseObjectObservable<Program>;;
+    return this.program = this.af.database.object('program') as FirebaseObjectObservable<Program>;
 }
 
   updateProgram(progInfo){
     return this.program.update(progInfo)
+}
+
+getSemester1(){
+  return this.courses = this.af.database.list('courses/semester1') as FirebaseListObservable<CourseList[]>;
+}
+
+getSemester2(){
+  return this.courses = this.af.database.list('courses/semester2') as FirebaseListObservable<CourseList[]>;
 }
 
 }
@@ -36,5 +44,13 @@ interface Program{
 
   description?:string;
   deadline?:string;
+  title?:string;
+}
+
+interface CourseList{
+
+  code?:string;
+  description?:string;
+  hours?:string;
   title?:string;
 }
