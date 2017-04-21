@@ -1,12 +1,12 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Professors
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="masters">
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-card *ngFor="let teacher of teachers">
@@ -15,8 +15,8 @@
         {{teacher.name}}
       </ion-card-header>
 
-      <ion-card-content>
-        {{teacher.profile}}
+      <ion-card-content text-wrap>
+        <p>{{teacher.profile}}</p>
       </ion-card-content>
 
     </ion-card>

@@ -1,18 +1,11 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="primary" >
     <ion-title>{{program?.title}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="editPage()">
         <ion-icon name="build"></ion-icon>
       </button>
-      <!--
-      <button *ngIf="!(af.auth | async)" ion-button icon-only (click)="login()">
-        <ion-icon name="log-in"></ion-icon>
-      </button>
-      <button *ngIf="(af.auth | async)" ion-button icon-only (click)="logout()">
-        <ion-icon name="log-out"></ion-icon>
-      </button>
--->
+
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -24,7 +17,7 @@
 
   <ion-item>
   <ion-note item-left>
-    Deadline to apply -
+    Deadline to apply
   </ion-note>
 
   <ion-note color="dark" item-right>
@@ -32,14 +25,10 @@
   </ion-note>
 </ion-item>
 
-  <ion-card> <!--(click)="viewProgram(program.description, program.deadline)"-->
-
-    <ion-card-content>
+<ion-item text-wrap>
       <ion-note color="dark">
           {{program?.description}}
       </ion-note>
-    </ion-card-content>
-
-  </ion-card>
+</ion-item>
 </ion-list>
 </ion-content>

@@ -1,29 +1,45 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Program Structure
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding >
   <ion-item-group>
   <ion-item-divider color="light">Semester 1</ion-item-divider>
   <ion-item *ngFor="let course of courses1">
-    <h2>{{course.code}}</h2>
-    <p>{{course.title}}</p>
-    <p>{{course.hours}}</p>
-    <p>{{course.description}}</p>
+    <ion-card text-wrap>
+  <ion-card-header text-wrap>
+    {{course.title}}
+  </ion-card-header>
+
+
+    <ion-card-content >
+      <p>Code: {{course.code}}</p>
+      <p>Number of hours: {{course.hours}}</p><br>
+      <p>{{course.description}}</p>
+  </ion-card-content>
+</ion-card>
   </ion-item>
 </ion-item-group>
 
 <ion-item-group>
 <ion-item-divider color="light">Semester 2</ion-item-divider>
 <ion-item *ngFor="let course of courses2">
-  <h2>{{course.code}}</h2>
-  <p>{{course.title}}</p>
-  <p>{{course.hours}}</p>
-  <p>{{course.description}}</p>
+  <ion-card text-wrap>
+<ion-card-header text-wrap>
+  {{course.title}}
+</ion-card-header>
+
+
+  <ion-card-content>
+    <p>Code: {{course.code}}</p>
+    <p>Number of hours: {{course.hours}}</p><br>
+    <p>{{course.description}}</p>
+</ion-card-content>
+</ion-card>
 </ion-item>
 
 </ion-item-group>
