@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>editPageDescription</ion-title>
+    <ion-title>Edit Program Description</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form (ngSubmit)="onEditSubmit()">
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input type="text" [(ngModel)]="title" name="title" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Deadline</ion-label>
+      <ion-input type="text" [(ngModel)]="deadline" name="deadline" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Post</ion-label>
+      <ion-textarea rows="7" [(ngModel)]="description" name="description" required></ion-textarea>
+    </ion-item>
+<br>
+    <button ion-button type="submit" outline block round color="secondary">Update a Note</button>
+  </form>
 
 </ion-content>

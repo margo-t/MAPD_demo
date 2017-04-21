@@ -26,10 +26,15 @@ export class FirebaseService {
     return this.program = this.af.database.object('program') as FirebaseObjectObservable<Program>;;
 }
 
+  updateProgram(progInfo){
+    return this.program.update(progInfo)
+}
+
 }
 
 interface Program{
 
   description?:string;
-  deadlines?:string;
+  deadline?:string;
+  title?:string;
 }
