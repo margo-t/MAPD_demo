@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {FirebaseService} from '../../providers/firebase-service'
-import * as firebase from 'firebase';
 import { HomePage } from '../../pages/home/home';
 
 /**

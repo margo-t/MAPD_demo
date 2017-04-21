@@ -13,7 +13,7 @@ import { EditPageDescription } from '../pages/edit-page-description/edit-page-de
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
 import { FirebaseService } from '../providers/firebase-service';
 
 // Must export the config

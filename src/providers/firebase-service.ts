@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+//import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 
 /*
   Generated class for the FirebaseService provider.
