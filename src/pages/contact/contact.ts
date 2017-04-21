@@ -36,7 +36,13 @@ export class ContactPage implements OnInit {
     if (val && val.trim() != '') {
       this.teachers = this.teachers.filter((teachers) => {
         return (teachers.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
+      })}
+      else
+   {
+       this.firebaseService.getTeacher().subscribe(teachers => {
+         console.log(teachers);
+         this.teachers = teachers;
+       });
     }
   }
 
