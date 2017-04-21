@@ -13,8 +13,9 @@ import * as firebase from 'firebase';
 @Injectable()
 export class FirebaseService {
 
-  courses: FirebaseListObservable<any[]>;
   program: FirebaseObjectObservable<any>;
+  courses: FirebaseListObservable<any[]>;
+  teachers: FirebaseListObservable<any[]>;
   folder: any;
 
   constructor(private af: AngularFire) {
@@ -22,12 +23,12 @@ export class FirebaseService {
     //this.note = this.af.database.object('/notes/'+id) as FirebaseObjectObservable<Note>;
   }
 
-  getDescription(){
-    return this.program = this.af.database.object('program') as FirebaseObjectObservable<Program>;
+getDescription(){
+  return this.program = this.af.database.object('program') as FirebaseObjectObservable<Program>;
 }
 
-  updateProgram(progInfo){
-    return this.program.update(progInfo)
+updateProgram(progInfo){
+  return this.program.update(progInfo)
 }
 
 getSemester1(){
@@ -36,6 +37,10 @@ getSemester1(){
 
 getSemester2(){
   return this.courses = this.af.database.list('courses/semester2') as FirebaseListObservable<CourseList[]>;
+}
+
+getTeacher(){
+  return this.teachers = this.af.database.list('teachers') as FirebaseListObservable<Teacher[]>;
 }
 
 }
@@ -53,4 +58,10 @@ interface CourseList{
   description?:string;
   hours?:string;
   title?:string;
+}
+
+interface Teacher{
+
+  name?:string;
+  profile?:string;
 }
