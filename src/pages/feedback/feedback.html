@@ -15,4 +15,33 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-card *ngFor="let note of notes">
+
+      <ion-card-header>
+        {{note.commenter}}
+      </ion-card-header>
+
+      <ion-card-content>
+        {{note.post}}
+        <ion-note item-right><br><br>
+        {{note.timestamp}}
+        </ion-note>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-list>
+
+  <form (ngSubmit)="onAddSubmit()">
+    <ion-item>
+      <ion-label>Feedback</ion-label>
+      <ion-textarea rows="2" [(ngModel)]="post" name="post" required></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Your Name</ion-label>
+      <ion-input type="text" [(ngModel)]="commenter" name="commenter" required></ion-input>
+    </ion-item><br>
+    <button ion-button type="submit" outline block round >Save a Note</button>
+  </form>
+
 </ion-content>

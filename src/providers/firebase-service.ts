@@ -16,6 +16,7 @@ export class FirebaseService {
   program: FirebaseObjectObservable<any>;
   courses: FirebaseListObservable<any[]>;
   teachers: FirebaseListObservable<any[]>;
+  comments: FirebaseListObservable<any[]>;
   folder: any;
 
   constructor(private af: AngularFire) {
@@ -43,6 +44,15 @@ getTeacher(){
   return this.teachers = this.af.database.list('teachers') as FirebaseListObservable<Teacher[]>;
 }
 
+getComments(){
+  return this.comments = this.af.database.list('comments') as FirebaseListObservable<Comment[]>;
+
+}
+
+addComment(comment){
+  return this.comments.push(comment);
+}
+
 }
 
 interface Program{
@@ -64,4 +74,11 @@ interface Teacher{
 
   name?:string;
   profile?:string;
+}
+
+interface Comment{
+
+  commenter?:string;
+  post?:string;
+  timestamp?:string;
 }
