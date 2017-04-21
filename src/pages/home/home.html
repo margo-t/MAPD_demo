@@ -1,17 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>{{program?.title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="editPage()">
+        <ion-icon name="build"></ion-icon>
+      </button>
+      <!--
+      <button *ngIf="!(af.auth | async)" ion-button icon-only (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+      </button>
+      <button *ngIf="(af.auth | async)" ion-button icon-only (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+-->
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+
+
+<ion-list>
+
+  <ion-item>
+  <ion-note item-left>
+    Deadline to apply for the next program
+  </ion-note>
+
+  <ion-note color="dark" item-right>
+{{program?.deadline}}
+  </ion-note>
+</ion-item>
+
+  <ion-card> <!--(click)="viewProgram(program.description, program.deadline)"-->
+
+    <ion-card-content>
+      <ion-note color="dark">
+          {{program?.description}}
+      </ion-note>
+    </ion-card-content>
+
+  </ion-card>
+</ion-list>
 </ion-content>

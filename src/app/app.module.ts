@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { Feedback } from '../pages/feedback/feedback';
 import { TabsPage } from '../pages/tabs/tabs';
+import { EditPageDescription } from '../pages/edit-page-description/edit-page-description';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,10 +26,11 @@ export const firebaseConfig = {
     messagingSenderId: "681852866446"
 };
 
+/*
 const firebaseAuthConfig = {
   provider: AuthProviders.Google,
   method: AuthMethods.Redirect
-};
+};*/
 
 
 @NgModule({
@@ -38,12 +40,13 @@ const firebaseAuthConfig = {
     ContactPage,
     HomePage,
     Feedback,
-    TabsPage
+    TabsPage,
+    EditPageDescription
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +55,8 @@ const firebaseAuthConfig = {
     ContactPage,
     HomePage,
     Feedback,
-    TabsPage
+    TabsPage,
+    EditPageDescription
   ],
   providers: [
     FirebaseService,

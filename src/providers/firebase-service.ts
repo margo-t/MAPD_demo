@@ -13,8 +13,23 @@ import * as firebase from 'firebase';
 @Injectable()
 export class FirebaseService {
 
-  constructor(public http: Http) {
-    console.log('Hello FirebaseService Provider');
+  //program: FirebaseListObservable<any[]>;
+  program: FirebaseObjectObservable<any>;
+  folder: any;
+
+  constructor(private af: AngularFire) {
+    //this.program = this.af.database.list('program') as FirebaseListObservable<Program[]>;
+    //this.note = this.af.database.object('/notes/'+id) as FirebaseObjectObservable<Note>;
   }
 
+  getDescription(){
+    return this.program = this.af.database.object('program') as FirebaseObjectObservable<Program>;;
+}
+
+}
+
+interface Program{
+
+  description?:string;
+  deadlines?:string;
 }
